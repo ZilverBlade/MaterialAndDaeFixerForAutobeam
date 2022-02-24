@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaterialAndDaeFixerForAutobeam", "MaterialAndDaeFixerForAutobeam.csproj", "{4FE419AA-ADDB-4E01-BFE6-10D1D8A470DD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4FE419AA-ADDB-4E01-BFE6-10D1D8A470DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FE419AA-ADDB-4E01-BFE6-10D1D8A470DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FE419AA-ADDB-4E01-BFE6-10D1D8A470DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FE419AA-ADDB-4E01-BFE6-10D1D8A470DD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		BuildVersion_AssemblyInfoFilename = Properties\AssemblyInfo.cs
+		BuildVersion_UpdateFileVersion = True
+		BuildVersion_UpdateAssemblyVersion = True
+		BuildVersion_BuildVersioningStyle = None.None.Increment.MonthAndDayStamp
+		BuildVersion_StartDate = 2000/1/1
+		SolutionGuid = {E8816538-B220-4D2F-B808-FF439C968610}
+	EndGlobalSection
+EndGlobal
