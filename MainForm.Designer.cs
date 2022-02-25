@@ -46,6 +46,11 @@ namespace MaterialAndDaeFixerForAutobeam
             this.followMeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.youtubeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.twitchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.beamNGPostToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label4 = new System.Windows.Forms.Label();
+            this.randomMatGenCheck = new System.Windows.Forms.CheckBox();
+            this.nameModificCheck = new System.Windows.Forms.CheckBox();
+            this.matNameShortnedCheck = new System.Windows.Forms.CheckBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,7 +60,7 @@ namespace MaterialAndDaeFixerForAutobeam
             this.fixBtn.Enabled = false;
             this.fixBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.fixBtn.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.fixBtn.Location = new System.Drawing.Point(38, 249);
+            this.fixBtn.Location = new System.Drawing.Point(38, 225);
             this.fixBtn.Name = "fixBtn";
             this.fixBtn.Size = new System.Drawing.Size(368, 34);
             this.fixBtn.TabIndex = 0;
@@ -110,7 +115,7 @@ namespace MaterialAndDaeFixerForAutobeam
             // 
             this.carNameTxtBox.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.carNameTxtBox.ForeColor = System.Drawing.SystemColors.Info;
-            this.carNameTxtBox.Location = new System.Drawing.Point(44, 139);
+            this.carNameTxtBox.Location = new System.Drawing.Point(44, 115);
             this.carNameTxtBox.Name = "carNameTxtBox";
             this.carNameTxtBox.Size = new System.Drawing.Size(354, 20);
             this.carNameTxtBox.TabIndex = 3;
@@ -119,7 +124,7 @@ namespace MaterialAndDaeFixerForAutobeam
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Location = new System.Drawing.Point(52, 123);
+            this.label3.Location = new System.Drawing.Point(52, 99);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(105, 13);
             this.label3.TabIndex = 5;
@@ -131,7 +136,7 @@ namespace MaterialAndDaeFixerForAutobeam
             this.shortMatCharBtn.Enabled = false;
             this.shortMatCharBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.shortMatCharBtn.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.shortMatCharBtn.Location = new System.Drawing.Point(38, 289);
+            this.shortMatCharBtn.Location = new System.Drawing.Point(38, 265);
             this.shortMatCharBtn.Name = "shortMatCharBtn";
             this.shortMatCharBtn.Size = new System.Drawing.Size(368, 34);
             this.shortMatCharBtn.TabIndex = 0;
@@ -144,7 +149,7 @@ namespace MaterialAndDaeFixerForAutobeam
             this.button1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button1.Location = new System.Drawing.Point(38, 211);
+            this.button1.Location = new System.Drawing.Point(38, 187);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(368, 32);
             this.button1.TabIndex = 6;
@@ -156,11 +161,12 @@ namespace MaterialAndDaeFixerForAutobeam
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(41, 192);
+            this.label1.Location = new System.Drawing.Point(41, 168);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(71, 13);
             this.label1.TabIndex = 7;
             this.label1.Text = "random seed:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // buildCleanupBtn
             // 
@@ -169,7 +175,7 @@ namespace MaterialAndDaeFixerForAutobeam
             this.buildCleanupBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buildCleanupBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buildCleanupBtn.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.buildCleanupBtn.Location = new System.Drawing.Point(38, 338);
+            this.buildCleanupBtn.Location = new System.Drawing.Point(38, 316);
             this.buildCleanupBtn.Name = "buildCleanupBtn";
             this.buildCleanupBtn.Size = new System.Drawing.Size(368, 34);
             this.buildCleanupBtn.TabIndex = 0;
@@ -183,10 +189,11 @@ namespace MaterialAndDaeFixerForAutobeam
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.checkForUpdatesToolStripMenuItem,
             this.youtubeChannelToolStripMenuItem,
-            this.followMeToolStripMenuItem});
+            this.followMeToolStripMenuItem,
+            this.beamNGPostToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(444, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(441, 24);
             this.menuStrip1.TabIndex = 8;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -214,23 +221,89 @@ namespace MaterialAndDaeFixerForAutobeam
             // youtubeToolStripMenuItem
             // 
             this.youtubeToolStripMenuItem.Name = "youtubeToolStripMenuItem";
-            this.youtubeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.youtubeToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.youtubeToolStripMenuItem.Text = "Youtube";
             this.youtubeToolStripMenuItem.Click += new System.EventHandler(this.youtubeToolStripMenuItem_Click);
             // 
             // twitchToolStripMenuItem
             // 
             this.twitchToolStripMenuItem.Name = "twitchToolStripMenuItem";
-            this.twitchToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.twitchToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.twitchToolStripMenuItem.Text = "Twitch";
             this.twitchToolStripMenuItem.Click += new System.EventHandler(this.twitchToolStripMenuItem_Click);
+            // 
+            // beamNGPostToolStripMenuItem
+            // 
+            this.beamNGPostToolStripMenuItem.Name = "beamNGPostToolStripMenuItem";
+            this.beamNGPostToolStripMenuItem.Size = new System.Drawing.Size(92, 20);
+            this.beamNGPostToolStripMenuItem.Text = "BeamNG Post";
+            this.beamNGPostToolStripMenuItem.Click += new System.EventHandler(this.beamNGPostToolStripMenuItem_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label4.Location = new System.Drawing.Point(200, 366);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(40, 13);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Status:";
+            // 
+            // randomMatGenCheck
+            // 
+            this.randomMatGenCheck.AutoCheck = false;
+            this.randomMatGenCheck.AutoSize = true;
+            this.randomMatGenCheck.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.randomMatGenCheck.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.randomMatGenCheck.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.randomMatGenCheck.Location = new System.Drawing.Point(39, 388);
+            this.randomMatGenCheck.Name = "randomMatGenCheck";
+            this.randomMatGenCheck.Size = new System.Drawing.Size(103, 17);
+            this.randomMatGenCheck.TabIndex = 10;
+            this.randomMatGenCheck.Text = "Generated name";
+            this.randomMatGenCheck.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.randomMatGenCheck.UseVisualStyleBackColor = false;
+            // 
+            // nameModificCheck
+            // 
+            this.nameModificCheck.AutoCheck = false;
+            this.nameModificCheck.AutoSize = true;
+            this.nameModificCheck.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.nameModificCheck.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.nameModificCheck.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.nameModificCheck.Location = new System.Drawing.Point(149, 388);
+            this.nameModificCheck.Name = "nameModificCheck";
+            this.nameModificCheck.Size = new System.Drawing.Size(99, 17);
+            this.nameModificCheck.TabIndex = 10;
+            this.nameModificCheck.Text = "Names modified";
+            this.nameModificCheck.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.nameModificCheck.UseVisualStyleBackColor = false;
+            // 
+            // matNameShortnedCheck
+            // 
+            this.matNameShortnedCheck.AutoCheck = false;
+            this.matNameShortnedCheck.AutoSize = true;
+            this.matNameShortnedCheck.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.matNameShortnedCheck.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.matNameShortnedCheck.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.matNameShortnedCheck.Location = new System.Drawing.Point(257, 388);
+            this.matNameShortnedCheck.Name = "matNameShortnedCheck";
+            this.matNameShortnedCheck.Size = new System.Drawing.Size(144, 17);
+            this.matNameShortnedCheck.TabIndex = 10;
+            this.matNameShortnedCheck.Text = "Shortened material length";
+            this.matNameShortnedCheck.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.matNameShortnedCheck.UseVisualStyleBackColor = false;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ClientSize = new System.Drawing.Size(444, 398);
+            this.ClientSize = new System.Drawing.Size(441, 427);
+            this.Controls.Add(this.matNameShortnedCheck);
+            this.Controls.Add(this.nameModificCheck);
+            this.Controls.Add(this.randomMatGenCheck);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
@@ -274,6 +347,11 @@ namespace MaterialAndDaeFixerForAutobeam
         private System.Windows.Forms.ToolStripMenuItem followMeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem youtubeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem twitchToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem beamNGPostToolStripMenuItem;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.CheckBox randomMatGenCheck;
+        private System.Windows.Forms.CheckBox nameModificCheck;
+        private System.Windows.Forms.CheckBox matNameShortnedCheck;
     }
 }
 

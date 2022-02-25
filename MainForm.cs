@@ -14,6 +14,11 @@ namespace MaterialAndDaeFixerForAutobeam
 {
     public partial class MainForm : Form
     {
+/*
+        Note: A lot of code that is commented out is a lot of old design flaws and issues, 
+        as well as removing the broken log code because of memory leak issues 
+        (yes! I somehow managed to make this program exceed .NET framework capabilities) 
+*/
         public MainForm()
         {
             InitializeComponent();
@@ -22,6 +27,7 @@ namespace MaterialAndDaeFixerForAutobeam
         private string[] mainMatStringChunkArray;
         private string[] mainMatStringChunkArray2;
 
+       
 
         private string[] daeStringChunkArray;
         private string[] miscStringChunkArray;
@@ -51,10 +57,15 @@ namespace MaterialAndDaeFixerForAutobeam
             //FixMaterialNames();       only use this for replacing material names, it's disabled because of my paranoid ass beamng changing the way materials get read
             if (isfixedyet == false)
             {
-                if (MessageBox.Show($"Material names haven't been shortned yet. This might cause unpredictable results. Proceed?{Environment.NewLine}(Using this button without pressing the previous is only recommended if dae file already has been modified)", "Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                if (MessageBox.Show($"Material names haven't been changed yet. This might cause unpredictable results. Proceed?{Environment.NewLine}(Using this button without pressing the previous is only recommended if dae file already has been modified)", "Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     CutMatCharactersTo64();
+                    
                 }
+            }
+            else
+            {
+                CutMatCharactersTo64();
             }
             
         }
@@ -63,6 +74,7 @@ namespace MaterialAndDaeFixerForAutobeam
         private void fixBtn_Click1(object sender, EventArgs e)
         {
             isfixedyet = true;
+
             FixMaterialNames();
         }
 
@@ -126,7 +138,7 @@ namespace MaterialAndDaeFixerForAutobeam
 
 
             //fix opacity stamp changing "opacityMap"
-
+            matNameShortnedCheck.Checked = true;
             logTextBox.Text += System.Environment.NewLine + "Materials file cut successfully";
 
             mainMatStringChunk = string.Join(System.Environment.NewLine, mainMatStringChunkArray);
@@ -155,7 +167,7 @@ namespace MaterialAndDaeFixerForAutobeam
 
             for (int i = 0; i < mainMatStringChunkArray.Length; i++)
             {
-                if (mainMatStringChunkArray[i].Contains("\"opacityMap\"") == false)
+                if (mainMatStringChunkArray[i].Contains(".dds\"") == false)
                 {
                     mainMatStringChunkArray[i] = mainMatStringChunkArray[i].Replace(carNameTxtBox.Text, seed);
                 }
@@ -172,10 +184,12 @@ namespace MaterialAndDaeFixerForAutobeam
             logTextBox.Text += System.Environment.NewLine + "DAE (Collada) file set up successfully";
             daeStringChunk = string.Join(System.Environment.NewLine, daeStringChunkArray);
             mainMatStringChunk = string.Join(System.Environment.NewLine, mainMatStringChunkArray);
+
+            nameModificCheck.Checked = true;
             buildCleanupBtn.Enabled = true;
         }
         
-        private void FixEngineBullshit()
+        /* private void FixEngineBullshit()
         {
             string[] engineFuckeryStringChunkArrayBefore = new string[99999999];
             string[] engineFuckeryStringChunkArrayAfter = new string[99999999];
@@ -244,7 +258,7 @@ namespace MaterialAndDaeFixerForAutobeam
             for (int i = 0; i < engineFuckeryStringChunkArrayBefore.Length; i++) {
                 daeStringChunk = daeStringChunk.Replace(engineFuckeryStringChunkArrayBefore[i], engineFuckeryStringChunkArrayAfter[i]);
             }
-            /* for (int k = 0; k < engineFuckeryStringChunkArrayBefore.Length; k++)
+             for (int k = 0; k < engineFuckeryStringChunkArrayBefore.Length; k++)
              {
                  for (int i = 0; i < daeStringChunkArray.Length; i++)
                  {
@@ -253,19 +267,16 @@ namespace MaterialAndDaeFixerForAutobeam
                          daeStringChunkArray[i].Replace(engineFuckeryStringChunkArrayBefore[k], engineFuckeryStringChunkArrayAfter[k]);
                      }
                  }             
-             }*/
+             }
 
             Form2 frm = new Form2();
             frm.Show();
             frm.resultTxtBox.Text = daeStringChunk;
         }
-
+       */
 
         private void FinishAndClearAllData()
-        {
-
-            
-            
+        {            
             mainMatStringChunkArray = null;
             daeStringChunkArray = null;
 
@@ -306,6 +317,10 @@ namespace MaterialAndDaeFixerForAutobeam
 
             isfixedyet = false;
 
+            matNameShortnedCheck.Checked = false;
+            nameModificCheck.Checked = false;
+            randomMatGenCheck.Checked = false;
+
             logTextBox.Text += System.Environment.NewLine + "Materials completed!";
              MessageBox.Show("Materials fixed successfully!");
 
@@ -342,8 +357,13 @@ namespace MaterialAndDaeFixerForAutobeam
         {
             seed = RandomString(4);
             label1.Text = "random seed: " + seed;
+
+            randomMatGenCheck.Checked = true;
+
             fixBtn.Enabled = true;
             shortMatCharBtn.Enabled = true;
+
+
         }
 
         private void cleanup_click(object sender, EventArgs e)
@@ -366,6 +386,16 @@ namespace MaterialAndDaeFixerForAutobeam
             VersionCheckerAPI vcheck = new VersionCheckerAPI();
 
             vcheck.CheckForUpdates(true);
+        }
+
+        private void beamNGPostToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://www.beamng.com/resources/");
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
