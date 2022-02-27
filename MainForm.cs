@@ -142,7 +142,7 @@ namespace MaterialAndDaeFixerForAutobeam
             logTextBox.Text += System.Environment.NewLine + "Materials file cut successfully";
 
             mainMatStringChunk = string.Join(System.Environment.NewLine, mainMatStringChunkArray);
-            debugText(mainMatStringChunk);
+           // debugText(mainMatStringChunk);            //debug form, not for release
             buildCleanupBtn.Enabled = true;
         }
 
@@ -390,12 +390,27 @@ namespace MaterialAndDaeFixerForAutobeam
 
         private void beamNGPostToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Process.Start("https://www.beamng.com/resources/");
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void beamNGPostToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://www.beamng.com/resources/");
+        }
+
+        private void youtubeVideoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://youtu.be/t9wgiPl9J_g");
+        }
+
+        private void gitHubReleasesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://github.com/ZilverBlade/MaterialAndDaeFixerForAutobeam/releases");
         }
     }
 }

@@ -47,10 +47,13 @@ namespace MaterialAndDaeFixerForAutobeam
             this.youtubeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.twitchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.beamNGPostToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.beamNGPostToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.youtubeVideoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label4 = new System.Windows.Forms.Label();
             this.randomMatGenCheck = new System.Windows.Forms.CheckBox();
             this.nameModificCheck = new System.Windows.Forms.CheckBox();
             this.matNameShortnedCheck = new System.Windows.Forms.CheckBox();
+            this.gitHubReleasesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -221,23 +224,41 @@ namespace MaterialAndDaeFixerForAutobeam
             // youtubeToolStripMenuItem
             // 
             this.youtubeToolStripMenuItem.Name = "youtubeToolStripMenuItem";
-            this.youtubeToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.youtubeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.youtubeToolStripMenuItem.Text = "Youtube";
             this.youtubeToolStripMenuItem.Click += new System.EventHandler(this.youtubeToolStripMenuItem_Click);
             // 
             // twitchToolStripMenuItem
             // 
             this.twitchToolStripMenuItem.Name = "twitchToolStripMenuItem";
-            this.twitchToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.twitchToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.twitchToolStripMenuItem.Text = "Twitch";
             this.twitchToolStripMenuItem.Click += new System.EventHandler(this.twitchToolStripMenuItem_Click);
             // 
             // beamNGPostToolStripMenuItem
             // 
+            this.beamNGPostToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gitHubReleasesToolStripMenuItem,
+            this.beamNGPostToolStripMenuItem1,
+            this.youtubeVideoToolStripMenuItem});
             this.beamNGPostToolStripMenuItem.Name = "beamNGPostToolStripMenuItem";
-            this.beamNGPostToolStripMenuItem.Size = new System.Drawing.Size(92, 20);
-            this.beamNGPostToolStripMenuItem.Text = "BeamNG Post";
+            this.beamNGPostToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
+            this.beamNGPostToolStripMenuItem.Text = "Posts";
             this.beamNGPostToolStripMenuItem.Click += new System.EventHandler(this.beamNGPostToolStripMenuItem_Click);
+            // 
+            // beamNGPostToolStripMenuItem1
+            // 
+            this.beamNGPostToolStripMenuItem1.Name = "beamNGPostToolStripMenuItem1";
+            this.beamNGPostToolStripMenuItem1.Size = new System.Drawing.Size(185, 22);
+            this.beamNGPostToolStripMenuItem1.Text = "BeamNG Forum Post";
+            this.beamNGPostToolStripMenuItem1.Click += new System.EventHandler(this.beamNGPostToolStripMenuItem1_Click);
+            // 
+            // youtubeVideoToolStripMenuItem
+            // 
+            this.youtubeVideoToolStripMenuItem.Name = "youtubeVideoToolStripMenuItem";
+            this.youtubeVideoToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.youtubeVideoToolStripMenuItem.Text = "Youtube Video";
+            this.youtubeVideoToolStripMenuItem.Click += new System.EventHandler(this.youtubeVideoToolStripMenuItem_Click);
             // 
             // label4
             // 
@@ -293,6 +314,13 @@ namespace MaterialAndDaeFixerForAutobeam
             this.matNameShortnedCheck.Text = "Shortened material length";
             this.matNameShortnedCheck.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.matNameShortnedCheck.UseVisualStyleBackColor = false;
+            // 
+            // gitHubReleasesToolStripMenuItem
+            // 
+            this.gitHubReleasesToolStripMenuItem.Name = "gitHubReleasesToolStripMenuItem";
+            this.gitHubReleasesToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.gitHubReleasesToolStripMenuItem.Text = "GitHub Releases";
+            this.gitHubReleasesToolStripMenuItem.Click += new System.EventHandler(this.gitHubReleasesToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -352,6 +380,9 @@ namespace MaterialAndDaeFixerForAutobeam
         private System.Windows.Forms.CheckBox randomMatGenCheck;
         private System.Windows.Forms.CheckBox nameModificCheck;
         private System.Windows.Forms.CheckBox matNameShortnedCheck;
+        private System.Windows.Forms.ToolStripMenuItem beamNGPostToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem youtubeVideoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gitHubReleasesToolStripMenuItem;
     }
 }
 
