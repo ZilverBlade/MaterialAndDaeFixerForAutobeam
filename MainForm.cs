@@ -405,7 +405,7 @@ namespace MaterialAndDaeFixerForAutobeam
 
         private void youtubeVideoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Process.Start("https://youtu.be/t9wgiPl9J_g");
+            Process.Start("https://youtu.be/6ETEJf8fYnc");
         }
 
         private void gitHubReleasesToolStripMenuItem_Click(object sender, EventArgs e)
